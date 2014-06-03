@@ -1,3 +1,9 @@
+unix:SRCROOT=~u19809/Projects/DynamicQtObject_GIT
+unix:RTROOT=~u19809/Runtimes
+
+win32:SRCROOT=C:\Data\Development\Projects\DynamicQtObject_GIT
+win32:RTROOT=C:\Data\Development\Runtimes\
+
 # Add more folders to ship with the application, here
 folder_01.source = qml/DynamicQMLTest
 folder_01.target = qml
@@ -17,10 +23,10 @@ HEADERS += ..\DynamicQtTest\testobject.h
 SOURCES += main.cpp ..\DynamicQtTest\testobject.cpp ..\DynamicQtTest\dynamictestobject.cpp
 
 # add DynamicQtObject libs
-unix:LIBS += -LC:\Data\Development\Runtimes\build-DynamicQtObject-Desktop_Qt_5_1_1_MinGW_32bit-Debug\debug -lDynamicQtObject
-win32:LIBS += -LC:\Data\Development\Runtimes\build-DynamicQtObject-Desktop_Qt_5_1_1_MinGW_32bit-Debug\debug -lDynamicQtObject
-unix:INCLUDEPATH += C:\Data\Development\Projects\DynamicQtObject C:\Data\Development\Projects\DynamicQtObject\DynamicQtTest
-win32:INCLUDEPATH += C:\Data\Development\Projects\DynamicQtObject C:\Data\Development\Projects\DynamicQtObject\DynamicQtTest
+unix:LIBS += -L$$RTROOT/build-DynamicQtObject-Desktop_Qt_5_1_1_MinGW_32bit-Debug/debug -lDynamicQtObject
+win32:LIBS += -L$$RTROOT\build-DynamicQtObject-Desktop_Qt_5_1_1_MinGW_32bit-Debug\debug -lDynamicQtObject
+unix:INCLUDEPATH += $$SRCROOT $$SRCROOT/DynamicQtTest
+win32:INCLUDEPATH += $$SRCROOT $$SRCROOT\DynamicQtTest
 
 # Installation path
 # target.path =

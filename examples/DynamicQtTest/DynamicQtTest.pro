@@ -4,6 +4,12 @@
 #
 #-------------------------------------------------
 
+unix:SRCROOT=~u19809/Projects/DynamicQtObject_GIT
+unix:RTROOT=~u19809/Runtimes
+
+win32:SRCROOT=C:\Data\Development\Projects\DynamicQtObject_GIT
+win32:RTROOT=C:\Data\Development\Runtimes\
+
 QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -24,7 +30,7 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui
 
 # add DynamicQtObject libs
-unix:LIBS += -LC:\Data\Development\Runtimes\build-DynamicQtObject-Desktop_Qt_5_1_1_MinGW_32bit-Debug\debug -lDynamicQtObject
-win32:LIBS += -LC:\Data\Development\Runtimes\build-DynamicQtObject-Desktop_Qt_5_1_1_MinGW_32bit-Debug\debug -lDynamicQtObject
-unix:INCLUDEPATH += C:\Data\Development\Projects\DynamicQtObject
-win32:INCLUDEPATH += C:\Data\Development\Projects\DynamicQtObject
+unix:LIBS += -L$$RTROOT/build-DynamicQtObject-Desktop_Qt_5_1_1_MinGW_32bit-Debug/debug -lDynamicQtObject
+win32:LIBS += -L$$RTROOT\build-DynamicQtObject-Desktop_Qt_5_1_1_MinGW_32bit-Debug\debug -lDynamicQtObject
+unix:INCLUDEPATH += $$SRCROOT
+win32:INCLUDEPATH += $$SRCROOT
